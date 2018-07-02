@@ -1,0 +1,25 @@
+I am compiled from a .java file. // class
+
+My instance variable values can be different from my buddy’s values. // Object
+
+I behave like a template. // class
+
+I like to do stuff. // Method, Object
+
+I can have many methods. // Object, class
+
+I represent ‘state’. // Instance variable
+
+I have behaviors. // object, class
+
+I am located in objects. // Method, Instance variable
+
+I live on the heap. // Object
+
+I am used to create object instances. //class
+
+My state can change. // Instance variable, object
+
+I declare methods. // Onject
+
+I can change at runtime. //Instance variable, object
