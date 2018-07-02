@@ -1,0 +1,46 @@
+int size = 27;
+// declare an integer variable named ‘size’ and give it the value 27
+String name = “Fido”;
+// declare a String variable named 'name' and give it the value "Fido"
+
+Dog myDog = new Dog(name, size);
+// declare a object variable type Dog named 'myDog' and give it the name and the size
+
+x = size - 5;
+// declare a integer variable named 'x' give it the value size - 5
+
+if (x < 15) myDog.bark(8);
+// create a if statement that when x smaller than 15 then let myDog run bark() method with input 8
+
+while (x > 3) {
+// when x bigger than 3 then let myDog run the play method()
+myDog.play();
+}
+
+int[] numList = {2,4,6,8};
+// declare a integer array named 'numList' and give it the value of 2,4,6,8
+
+System.out.print(“Hello”);
+// print "Hello" to the console
+
+System.out.print(“Dog: “ + name);
+// print "Dog: " plus name the the dog to the console
+
+String num = “8”;
+// declare a new String variable named 'num' and give it the value "8"
+
+int z = Integer.parseInt(num);
+// declare a new integer variable named 'z' and parse the String num's value to integer value then give it to z
+
+
+try {
+// try statement
+readTheFile(“myFile.txt”);
+// read the file named 'myFile.txt'
+
+}
+catch(FileNotFoundException ex) {
+// if the try block failed then run this catch block
+System.out.print(“File not found.”);
+// print "File not found." to the console
+}
