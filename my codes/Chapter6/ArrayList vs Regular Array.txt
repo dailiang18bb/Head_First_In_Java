@@ -1,0 +1,22 @@
+ArrayList vs Regular Array
+
+myList[0] = a;
+
+myList[1] = b;
+
+int theSize = myList.length;
+
+Object o = myList[1];
+
+// can't
+myList[1] = null;
+
+
+for(String x : myList){
+	if (x.equals(b)){
+	return true;
+	}
+	else {
+	return false;
+	}
+}
