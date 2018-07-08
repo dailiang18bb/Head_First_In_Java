@@ -14,10 +14,6 @@ public class DotCom{
 		locationCells = locs;
 	}
 
-	public setName(String name){
-		this.name = name;
-	}
-
 	public void getName(){
 		return name;
 	}

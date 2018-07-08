@@ -1,0 +1,28 @@
+How many instance variables does Surgeon have? // 1
+
+How many instance variables does FamilyDoctor have? // 2
+
+How many methods does Doctor have? // 1
+
+How many methods does Surgeon have? // 2
+
+How many methods does FamilyDoctor have? // 2
+
+Can a FamilyDoctor do treatPatient()? // yes
+
+Can a FamilyDoctor do makeIncision()? // no
+
+
+----------------------------------------------
+
+Oven extends Kitchen // false
+Guitar extends Instrument // true
+Person extends Employee. // false
+Ferrari extends Engine. // false
+FriedEgg extends Food // yes
+Beagle extends Pet // yes
+Container extends Jar // false
+Metal extends Titanium // false
+GratefulDead extends Band // true
+Blonde extends Smart // false
+Beverage extends Martini // false
