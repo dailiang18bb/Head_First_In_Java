@@ -9,32 +9,18 @@ public class DotComBust{
 	int numOfGuesses = 0;
 
 	public static void main(String[] args) {
-
-		int startingLocation = (int)(Math.random() * 4);
-		int[] locations = {startingLocation,startingLocation + 1, startingLocation + 2};
-		dot.setLocationCells(locations);
-
-		// Scanner sc = new Scanner(System.in);
-
-		while(true){
-			//System.out.print("enter a number  ");
-			//String userGuess = sc.nextLine();
-			String userGuess = helper.getUserInput("enter a number between 0-7");
-			String result = dot.checkYourself(userGuess);
-			numOfGuesses++;
-			if (result.equals("kill")){
-				System.out.println("You took "+ numOfGuesses +" guesses");
-				break;
-			}
-		}
-
-		//sc.close();
+		DotComBust game = new DotComBust();
+		game.setUpGame();
+		game.startPlaying();
 	}
 
 	private void setUpGame(){
-		DotCom dotLdai = new DotCom("Ldai.com");
-		DotCom dotCharles = new DotCom("Charles.com");
-		DotCom dotVictor = new DotCom("Victor.com");
+		DotCom dotLdai = new DotCom();
+		dotLdai.setName("Ldai.com");
+		DotCom dotCharles = new DotCom();
+		dotCharles.setName("Charles.com");
+		DotCom dotVictor = new DotCom();
+		dotVictor.setName("Victor.com");
 		dotList.add(dotLdai);
 		dotList.add(dotCharles);
 		dotList.add(dotVictor);
@@ -44,6 +30,10 @@ public class DotComBust{
 		System.out.println("Try to sink them all in the fewest number of guesses");
 
 		// Setting up locations for each
+		for(DotCom dotComToSet : dotList){
+			ArrayList<String> newLocation = helper.placeDotCom(3);
+			dotComToSet.setLocationCells(newLocation);
+		}
 
 	}
 
@@ -53,35 +43,36 @@ public class DotComBust{
 			checkUserGuess(userGuess);
 		}
 		finishGame();
-
 	}
 
-	private void checkUserGuess(){
+	private void checkUserGuess(String userGuess){
+		numOfGuesses++;
+		String result = "miss";
+		for(DotCom dotComToTest : dotList){
+			result = dotComToTest.checkYourself(userGuess);
+			if(result.equals("hit")){
+				break;
+			}
+			if(result.equals("kill")){
+				dotList.remove(dotComToTest);
+				break;
+			}
+		}
+		System.out.println(result);
 
 	}
 
 	private void finishGame(){
-
-	}
-}
-
-
-
-
-class GameHelper {
-	public String getUserInput(String prompt) {
-		String inputLine = null;
-		System.out.print(prompt + " ");
-		try {
-			BufferedReader is = new BufferedReader(
-				new InputStreamReader(System.in));
-			inputLine = is.readLine();
-			if (inputLine.length() == 0 ) return null;
-		} catch (IOException e) {
-			System.out.println("IOException: " + e);
+		System.out.println("All Dot Coms are dead! Your stock is now worthless.");
+		if (numOfGuesses <= 18) {
+			System.out.println("It only took you " + numOfGuesses + " guesses.");
+			System.out.println(" You got out before your options sank.");
+		} else {
+			System.out.println("Took you long enough. "+ numOfGuesses + " guesses.");
+			System.out.println("Fish are dancing with your options.");
 		}
-		return inputLine;
 	}
 }
+
 
 

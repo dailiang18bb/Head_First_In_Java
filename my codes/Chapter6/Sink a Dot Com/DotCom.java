@@ -6,15 +6,15 @@ public class DotCom{
 	private String name;
 	private ArrayList <String> locationCells;
 
-	public class DotCom(String dotName){
-		name = dotName;
+	public void setName(String n){
+		name = n;
 	}
 
 	public void setLocationCells(ArrayList<String> locs){
 		locationCells = locs;
 	}
 
-	public void getName(){
+	public String getName(){
 		return name;
 	}
 
@@ -29,11 +29,12 @@ public class DotCom{
 
 			if (locationCells.isEmpty()){
 				result = "kill";
+				System.out.println("Ouch! You sunk " + name + " : ( ");
 			}else{
 				result = "hit";
 			}
 		} 
-		System.out.println(result);
+		// System.out.println(result);
 		return result;
 	}
 }
